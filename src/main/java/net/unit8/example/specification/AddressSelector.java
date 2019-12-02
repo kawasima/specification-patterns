@@ -8,8 +8,10 @@ import net.unit8.example.entity.Customer;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Root;
-import java.util.function.Predicate;
 
+/**
+ * 住所で絞り込むためのセレクタ.
+ */
 public class AddressSelector implements Selector<SearchCondition, Customer> {
     @Override
     public javax.persistence.criteria.Predicate getCriteria(CriteriaBuilder cb, Root<Customer> customerRoot, SearchCondition condition) {

@@ -14,6 +14,9 @@ import java.util.function.Predicate;
 
 import static net.unit8.example.entity.CustomerClassification.*;
 
+/**
+ * 顧客のクラスで絞り込むためのセレクタ.
+ */
 public class CustomerClassificationSelector implements Selector<SearchCondition, Customer> {
     private final EnumSet<CustomerClassification> classifications;
 

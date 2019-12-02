@@ -18,7 +18,7 @@ public class Specification {
         return new Specification(predicate, selector);
     }
 
-    public boolean test(SearchCondition cond) {
+    public boolean isSatisfiedBy(SearchCondition cond) {
         return predicate.test(cond);
     }
 

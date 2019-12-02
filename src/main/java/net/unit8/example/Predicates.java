@@ -7,11 +7,6 @@ import java.util.function.Predicate;
 public class Predicates {
     public static final Predicate<SearchCondition> ALL = cond -> true;
     public static final Predicate<SearchCondition> nonNull(Function<SearchCondition, Object> func) {
-        return new Predicate<>() {
-            @Override
-            public boolean test(SearchCondition condition) {
-                return Objects.nonNull(func.apply(condition));
-            }
-        };
+        return condition -> Objects.nonNull(func.apply(condition));
     }
 }
