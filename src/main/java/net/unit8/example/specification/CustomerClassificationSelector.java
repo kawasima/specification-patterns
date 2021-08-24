@@ -35,7 +35,6 @@ public class CustomerClassificationSelector implements Selector<SearchCondition,
 
     @Override
     public javax.persistence.criteria.Predicate getCriteria(CriteriaBuilder cb, Root<Customer> customerRoot, SearchCondition condition) {
-        final Join<Customer, Address> address = customerRoot.join("address");
-        return address.get("classification").in(classifications);
+        return customerRoot.get("classification").in(classifications);
     }
 }
