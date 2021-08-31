@@ -4,18 +4,19 @@ import lombok.Data;
 import net.unit8.example.trust.domain.RegularUser;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "block_users")
 @Data
-public class BlockUserJpaEntity {
+public class BlockUserJpaEntity implements Serializable {
     @Id
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "blocker_id")
-    private RegularUser blocker;
+    private UserJpaEntity blocker;
 
     @Id
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "blocked_id")
-    private RegularUser blocked;
+    private UserJpaEntity blocked;
 }

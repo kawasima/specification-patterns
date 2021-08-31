@@ -16,7 +16,7 @@ package net.unit8.example.trust.domain;
 public class DisclosureSpecification implements Specification<User> {
     private final User user;
 
-    public DisclosureSpecification(RegularUser user) {
+    public DisclosureSpecification(User user) {
         this.user = user;
     }
 
@@ -28,6 +28,10 @@ public class DisclosureSpecification implements Specification<User> {
             return true;
         }
         return false;
+    }
+
+    public User getUser() {
+        return user;
     }
 
     public boolean canViewFriendsOfFriend() {
